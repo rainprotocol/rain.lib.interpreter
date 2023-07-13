@@ -1,0 +1,720 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>LibIntegrityCheck</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../../favicon.png">
+        <link rel="stylesheet" href="../../../../css/variables.css">
+        <link rel="stylesheet" href="../../../../css/general.css">
+        <link rel="stylesheet" href="../../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../../highlight.css">
+        <link rel="stylesheet" href="../../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../book.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../../../index.html">Home</a></li><li class="chapter-item affix "><li class="part-title">src</li><li class="chapter-item "><a href="../../../../src/abstract/index.html">❱ abstract</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/abstract/DeployerDiscoverableMetaV1.sol/struct.DeployerDiscoverableMetaV1ConstructionConfig.html">DeployerDiscoverableMetaV1ConstructionConfig</a></li><li class="chapter-item "><a href="../../../../src/abstract/DeployerDiscoverableMetaV1.sol/abstract.DeployerDiscoverableMetaV1.html">DeployerDiscoverableMetaV1</a></li></ol></li><li class="chapter-item "><a href="../../../../src/concrete/index.html">❱ concrete</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/error.UnexpectedPointers.html">UnexpectedPointers</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/error.UnexpectedInterpreterBytecodeHash.html">UnexpectedInterpreterBytecodeHash</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/error.MissingEntrypoint.html">MissingEntrypoint</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/error.UnexpectedStoreBytecodeHash.html">UnexpectedStoreBytecodeHash</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/error.UnexpectedOpMetaHash.html">UnexpectedOpMetaHash</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/error.NegativeStackIndex.html">NegativeStackIndex</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/struct.RainterpreterExpressionDeployerConstructionConfig.html">RainterpreterExpressionDeployerConstructionConfig</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/contract.RainterpreterExpressionDeployerNP.html">RainterpreterExpressionDeployerNP</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExpressionDeployerNP.sol/constants.RainterpreterExpressionDeployerNP.html">RainterpreterExpressionDeployerNP constants</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExtern.sol/error.BadInputs.html">BadInputs</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExtern.sol/error.UnknownOp.html">UnknownOp</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterExtern.sol/contract.RainterpreterExtern.html">RainterpreterExtern</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterNP.sol/error.NegativeStackLength.html">NegativeStackLength</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterNP.sol/contract.RainterpreterNP.html">RainterpreterNP</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterStore.sol/error.RainterpreterStoreOddSetLength.html">RainterpreterStoreOddSetLength</a></li><li class="chapter-item "><a href="../../../../src/concrete/RainterpreterStore.sol/contract.RainterpreterStore.html">RainterpreterStore</a></li></ol></li><li class="chapter-item "><a href="../../../../src/interface/index.html">❱ interface</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/interface/deprecated/index.html">❱ deprecated</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/interface/deprecated/IInterpreterCallerV1.sol/struct.SignedContext.html">SignedContext</a></li><li class="chapter-item "><a href="../../../../src/interface/deprecated/IInterpreterCallerV1.sol/interface.IInterpreterCallerV1.html">IInterpreterCallerV1</a></li><li class="chapter-item "><a href="../../../../src/interface/deprecated/IInterpreterCallerV1.sol/constants.IInterpreterCallerV1.html">IInterpreterCallerV1 constants</a></li></ol></li><li class="chapter-item "><a href="../../../../src/interface/unstable/index.html">❱ unstable</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/interface/unstable/IDebugExpressionDeployerV1.sol/interface.IDebugExpressionDeployerV1.html">IDebugExpressionDeployerV1</a></li><li class="chapter-item "><a href="../../../../src/interface/unstable/IDebugInterpreterV1.sol/interface.IDebugInterpreterV1.html">IDebugInterpreterV1</a></li><li class="chapter-item "><a href="../../../../src/interface/unstable/IExpressionDeployerV2.sol/interface.IExpressionDeployerV2.html">IExpressionDeployerV2</a></li><li class="chapter-item "><a href="../../../../src/interface/unstable/IExpressionDeployerV2.sol/constants.IExpressionDeployerV2.html">IExpressionDeployerV2 constants</a></li><li class="chapter-item "><a href="../../../../src/interface/unstable/IParserV1.sol/interface.IParserV1.html">IParserV1</a></li></ol></li><li class="chapter-item "><a href="../../../../src/interface/IExpressionDeployerV1.sol/interface.IExpressionDeployerV1.html">IExpressionDeployerV1</a></li><li class="chapter-item "><a href="../../../../src/interface/IExpressionDeployerV1.sol/constants.IExpressionDeployerV1.html">IExpressionDeployerV1 constants</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterCallerV2.sol/struct.SignedContextV1.html">SignedContextV1</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterCallerV2.sol/interface.IInterpreterCallerV2.html">IInterpreterCallerV2</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterCallerV2.sol/constants.IInterpreterCallerV2.html">IInterpreterCallerV2 constants</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterExternV1.sol/type.EncodedExternDispatch.html">EncodedExternDispatch</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterExternV1.sol/type.ExternDispatch.html">ExternDispatch</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterExternV1.sol/interface.IInterpreterExternV1.html">IInterpreterExternV1</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterStoreV1.sol/type.FullyQualifiedNamespace.html">FullyQualifiedNamespace</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterStoreV1.sol/interface.IInterpreterStoreV1.html">IInterpreterStoreV1</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterStoreV1.sol/constants.IInterpreterStoreV1.html">IInterpreterStoreV1 constants</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterV1.sol/type.SourceIndex.html">SourceIndex</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterV1.sol/type.EncodedDispatch.html">EncodedDispatch</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterV1.sol/type.StateNamespace.html">StateNamespace</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterV1.sol/type.Operand.html">Operand</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterV1.sol/interface.IInterpreterV1.html">IInterpreterV1</a></li><li class="chapter-item "><a href="../../../../src/interface/IInterpreterV1.sol/constants.IInterpreterV1.html">IInterpreterV1 constants</a></li></ol></li><li class="chapter-item expanded "><a href="../../../../src/lib/index.html">❱ lib</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/caller/index.html">❱ caller</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/caller/LibContext.sol/error.InvalidSignature.html">InvalidSignature</a></li><li class="chapter-item "><a href="../../../../src/lib/caller/LibContext.sol/library.LibContext.html">LibContext</a></li><li class="chapter-item "><a href="../../../../src/lib/caller/LibDeployerDiscoverable.sol/library.LibDeployerDiscoverable.html">LibDeployerDiscoverable</a></li><li class="chapter-item "><a href="../../../../src/lib/caller/LibEncodedDispatch.sol/library.LibEncodedDispatch.html">LibEncodedDispatch</a></li><li class="chapter-item "><a href="../../../../src/lib/caller/LibEvaluable.sol/struct.EvaluableConfig.html">EvaluableConfig</a></li><li class="chapter-item "><a href="../../../../src/lib/caller/LibEvaluable.sol/struct.Evaluable.html">Evaluable</a></li><li class="chapter-item "><a href="../../../../src/lib/caller/LibEvaluable.sol/library.LibEvaluable.html">LibEvaluable</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/compile/index.html">❱ compile</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/compile/LibCompile.sol/library.LibCompile.html">LibCompile</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/eval/index.html">❱ eval</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/eval/LibEval.sol/library.LibEval.html">LibEval</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/extern/index.html">❱ extern</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/extern/LibExtern.sol/library.LibExtern.html">LibExtern</a></li></ol></li><li class="chapter-item expanded "><a href="../../../../src/lib/integrity/index.html">❱ integrity</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/integrity/LibIntegrityCheck.sol/error.MinStackBottom.html">MinStackBottom</a></li><li class="chapter-item "><a href="../../../../src/lib/integrity/LibIntegrityCheck.sol/error.StackPopUnderflow.html">StackPopUnderflow</a></li><li class="chapter-item "><a href="../../../../src/lib/integrity/LibIntegrityCheck.sol/error.MinFinalStack.html">MinFinalStack</a></li><li class="chapter-item "><a href="../../../../src/lib/integrity/LibIntegrityCheck.sol/struct.IntegrityCheckState.html">IntegrityCheckState</a></li><li class="chapter-item expanded "><a href="../../../../src/lib/integrity/LibIntegrityCheck.sol/library.LibIntegrityCheck.html" class="active">LibIntegrityCheck</a></li><li class="chapter-item "><a href="../../../../src/lib/integrity/LibIntegrityCheck.sol/constants.LibIntegrityCheck.html">LibIntegrityCheck constants</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/ns/index.html">❱ ns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/ns/LibNamespace.sol/library.LibNamespace.html">LibNamespace</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/op/index.html">❱ op</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/op/chainlink/index.html">❱ chainlink</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/op/chainlink/LibOpChainlinkOraclePrice.sol/library.LibOpChainlinkOraclePrice.html">LibOpChainlinkOraclePrice</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/op/evm/index.html">❱ evm</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/op/evm/LibOpChainId.sol/library.LibOpChainId.html">LibOpChainId</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/op/LibAllStandardOpsNP.sol/error.BadDynamicLength.html">BadDynamicLength</a></li><li class="chapter-item "><a href="../../../../src/lib/op/LibAllStandardOpsNP.sol/library.LibAllStandardOpsNP.html">LibAllStandardOpsNP</a></li><li class="chapter-item "><a href="../../../../src/lib/op/LibAllStandardOpsNP.sol/constants.LibAllStandardOpsNP.html">LibAllStandardOpsNP constants</a></li><li class="chapter-item "><a href="../../../../src/lib/op/LibOp.sol/error.UnexpectedResultLength.html">UnexpectedResultLength</a></li><li class="chapter-item "><a href="../../../../src/lib/op/LibOp.sol/library.LibOp.html">LibOp</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/parse/index.html">❱ parse</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/parse/LibCtPop.sol/library.LibCtPop.html">LibCtPop</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibCtPop.sol/constants.LibCtPop.html">LibCtPop constants</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.MissingFinalSemi.html">MissingFinalSemi</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.UnexpectedLHSChar.html">UnexpectedLHSChar</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.UnexpectedRHSChar.html">UnexpectedRHSChar</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.UnexpectedRightParen.html">UnexpectedRightParen</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.WordSize.html">WordSize</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.UnknownWord.html">UnknownWord</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.MaxSources.html">MaxSources</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.DanglingSource.html">DanglingSource</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/error.StackOverflow.html">StackOverflow</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/struct.ParseState.html">ParseState</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/library.LibParseState.html">LibParseState</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/library.LibParse.html">LibParse</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParse.sol/constants.LibParse.html">LibParse constants</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParseMeta.sol/error.DuplicateFingerprint.html">DuplicateFingerprint</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParseMeta.sol/library.LibParseMeta.html">LibParseMeta</a></li><li class="chapter-item "><a href="../../../../src/lib/parse/LibParseMeta.sol/constants.LibParseMeta.html">LibParseMeta constants</a></li></ol></li><li class="chapter-item "><a href="../../../../src/lib/state/index.html">❱ state</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../../src/lib/state/LibInterpreterState.sol/struct.InterpreterState.html">InterpreterState</a></li><li class="chapter-item "><a href="../../../../src/lib/state/LibInterpreterState.sol/library.LibInterpreterState.html">LibInterpreterState</a></li><li class="chapter-item "><a href="../../../../src/lib/state/LibInterpreterStateDataContract.sol/library.LibInterpreterStateDataContract.html">LibInterpreterStateDataContract</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/rainprotocol/rain.interpreter" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="libintegritycheck"><a class="header" href="#libintegritycheck">LibIntegrityCheck</a></h1>
+<p><a href="https://github.com/rainprotocol/rain.interpreter/blob/4f5440388936d20366b4ae49ee1cae147c07bed8/src/lib/integrity/LibIntegrityCheck.sol">Git Source</a></p>
+<p>&quot;Dry run&quot; versions of the key logic from <code>LibStackPointer</code> that
+allows us to simulate a virtual stack based on the Solidity type system
+itself. The core loop of an integrity check is to dispatch an integrity-only
+version of a runtime opcode that then uses <code>LibIntegrityCheck</code> to apply a
+function that simulates a stack movement. The simulated stack movement will
+move a pointer to memory in the same way as a real pop/push would at runtime
+but without any associated logic or even allocating and writing data in
+memory on the other side of the pointer. Every pop is checked for out of
+bounds reads, even if it is an intermediate pop within the logic of a single
+opcode. The <em>gross</em> stack movement is just as important as the net movement.
+For example, consider a simple ERC20 total supply read. The <em>net</em> movement
+of a total supply read is 0, it pops the token address then pushes the total
+supply. However the <em>gross</em> movement is first -1 then +1, so we have to guard
+against the -1 underflowing while reading the token address <em>during</em> the
+simulated opcode dispatch. In general this can be subtle, complex and error
+prone, which is why <code>LibIntegrityCheck</code> and <code>LibStackPointer</code> take function
+signatures as arguments, so that the overloading mechanism in Solidity itself
+enforces correct pop/push calculations for every opcode.</p>
+<h2 id="functions"><a class="header" href="#functions">Functions</a></h2>
+<h3 id="newstate"><a class="header" href="#newstate">newState</a></h3>
+<p>Build a new integrity check state from sane defaults. The initialization
+of the stack bottom and highwater are important to avoid underflows
+during the integrity check.</p>
+<pre><code class="language-solidity">function newState(
+    bytes[] memory sources,
+    uint256[] memory constants,
+    function(IntegrityCheckState memory, Operand, Pointer)
+            view
+            returns (Pointer)[] memory integrityFns
+) internal pure returns (IntegrityCheckState memory);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>sources</code></td><td><code>bytes[]</code></td><td>The sources of the expression to check.</td></tr>
+<tr><td><code>constants</code></td><td><code>uint256[]</code></td><td>The constants of the expression to check.</td></tr>
+<tr><td><code>integrityFns</code></td><td><code>function (IntegrityCheckState memory, Operand, Pointer) view returns (Pointer)[]</code></td><td>The integrity check function pointers for each opcode.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>IntegrityCheckState</code></td><td>The new integrity check state.</td></tr>
+</tbody></table>
+</div>
+<h3 id="syncstackmaxtop"><a class="header" href="#syncstackmaxtop">syncStackMaxTop</a></h3>
+<p>If the given stack pointer is above the current state of the max stack
+top, the max stack top will be moved to the stack pointer.
+i.e. this works like <code>stackMaxTop = stackMaxTop.max(stackPointer)</code> but
+with the type unwrapping boilerplate included for convenience.</p>
+<pre><code class="language-solidity">function syncStackMaxTop(IntegrityCheckState memory integrityCheckState, Pointer stackPointer) internal pure;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>The state of the current integrity check including the current max stack top.</td></tr>
+<tr><td><code>stackPointer</code></td><td><code>Pointer</code></td><td>The stack pointer to compare and potentially swap the max stack top for.</td></tr>
+</tbody></table>
+</div>
+<h3 id="ensureintegrity"><a class="header" href="#ensureintegrity">ensureIntegrity</a></h3>
+<p>The main integrity check loop. Designed so that it can be called
+recursively by the dispatched integrity opcodes to support arbitrary
+nesting of sources and substacks, loops, etc.
+If ANY of the integrity checks for ANY opcode fails the entire integrity
+check will revert.</p>
+<pre><code class="language-solidity">function ensureIntegrity(
+    IntegrityCheckState memory integrityCheckState,
+    SourceIndex sourceIndex,
+    Pointer stackTop,
+    uint8 minStackOutputs
+) internal view returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>Current state of the integrity check passed by reference to allow for recursive/nested integrity checking.</td></tr>
+<tr><td><code>sourceIndex</code></td><td><code>SourceIndex</code></td><td>The source to check the integrity of which can be either an entrypoint or a non-entrypoint source if this is a recursive call to <code>ensureIntegrity</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>The current top of the virtual stack as a pointer. This can be manipulated to create effective substacks/scoped/immutable runtime values by restricting how the <code>stackTop</code> can move at deploy time.</td></tr>
+<tr><td><code>minStackOutputs</code></td><td><code>uint8</code></td><td>The minimum stack height required by the end of this integrity check. The caller MUST ensure that it sets this value high enough so that it can safely read enough values from the final stack without out of bounds reads. The external interface to the expression deployer accepts an array of minimum stack heights against entrypoints, but the internal checks can be recursive against non-entrypoints and each opcode such as <code>call</code> can build scoped stacks, etc. so here we just put defining the requirements back on the caller.</td></tr>
+</tbody></table>
+</div>
+<h3 id="push"><a class="header" href="#push">push</a></h3>
+<p>Push a single virtual item onto the virtual stack.
+Simply moves the stack top up one and syncs the interpreter max stack
+height with it if needed.</p>
+<pre><code class="language-solidity">function push(IntegrityCheckState memory integrityCheckState, Pointer stackTop) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>The state of the current integrity check.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>The pointer to the virtual stack top for the current integrity check.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after it has pushed an item.</td></tr>
+</tbody></table>
+</div>
+<h3 id="push-1"><a class="header" href="#push-1">push</a></h3>
+<p>Overloaded <code>push</code> to support <code>n</code> pushes in a single movement.
+<code>n</code> MAY be 0 and this is a virtual noop stack movement.</p>
+<pre><code class="language-solidity">function push(IntegrityCheckState memory integrityCheckState, Pointer stackTop, uint256 n)
+    internal
+    pure
+    returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>push</code>.</td></tr>
+<tr><td><code>n</code></td><td><code>uint256</code></td><td>The number of items to push to the virtual stack.</td></tr>
+</tbody></table>
+</div>
+<h3 id="pushignorehighwater"><a class="header" href="#pushignorehighwater">pushIgnoreHighwater</a></h3>
+<p>As push for 0+ values. Does NOT move the highwater. This may be useful if
+the highwater is already calculated somehow by the caller. This is also
+dangerous if used incorrectly as it could allow uncaught underflows to
+creep in.</p>
+<pre><code class="language-solidity">function pushIgnoreHighwater(IntegrityCheckState memory integrityCheckState, Pointer stackTop, uint256 n)
+    internal
+    pure
+    returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>push</code>.</td></tr>
+<tr><td><code>n</code></td><td><code>uint256</code></td><td>The number of items to push to the virtual stack.</td></tr>
+</tbody></table>
+</div>
+<h3 id="popunderflowcheck"><a class="header" href="#popunderflowcheck">popUnderflowCheck</a></h3>
+<p>Ensures that pops have not underflowed the stack, i.e. that the stack
+top is not below the stack bottom. We set a large stack bottom that is
+impossible to underflow within gas limits with realistic pops so that
+we don't have to deal with a numeric underflow of the stack top.</p>
+<pre><code class="language-solidity">function popUnderflowCheck(IntegrityCheckState memory integrityCheckState, Pointer stackTop) internal pure;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>As per <code>pop</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code>.</td></tr>
+</tbody></table>
+</div>
+<h3 id="pop"><a class="header" href="#pop">pop</a></h3>
+<p>Move the stock top down one item then check that it hasn't underflowed
+the stack bottom. If all virtual stack movements are defined in terms
+of pops and pushes this will enforce that the gross stack movements do
+not underflow, which would lead to out of bounds stack reads at runtime.</p>
+<pre><code class="language-solidity">function pop(IntegrityCheckState memory integrityCheckState, Pointer stackTop) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>The state of the current integrity check.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>The virtual stack top before an item is popped.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The virtual stack top after the pop.</td></tr>
+</tbody></table>
+</div>
+<h3 id="pop-1"><a class="header" href="#pop-1">pop</a></h3>
+<p>Overloaded <code>pop</code> to support <code>n</code> pops in a single movement.
+<code>n</code> MAY be 0 and this is a virtual noop stack movement.</p>
+<pre><code class="language-solidity">function pop(IntegrityCheckState memory integrityCheckState, Pointer stackTop, uint256 n)
+    internal
+    pure
+    returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code>.</td></tr>
+<tr><td><code>n</code></td><td><code>uint256</code></td><td>The number of items to pop off the virtual stack.</td></tr>
+</tbody></table>
+</div>
+<h3 id="popignorehighwater"><a class="header" href="#popignorehighwater">popIgnoreHighwater</a></h3>
+<p>DANGEROUS pop that does no underflow/highwater checks. The caller MUST
+ensure that this does not result in illegal stack reads.</p>
+<pre><code class="language-solidity">function popIgnoreHighwater(IntegrityCheckState memory, Pointer stackTop, uint256 n) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>IntegrityCheckState</code></td><td></td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code>.</td></tr>
+<tr><td><code>n</code></td><td><code>uint256</code></td><td>as per <code>pop</code>.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn"><a class="header" href="#applyfn">applyFn</a></h3>
+<p>Maps <code>function(uint256) internal view returns (uint256)</code> to pops and
+pushes once. The function itself is irrelevant we only care about the
+signature to know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256) internal view returns (uint256)
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256) internal view returns (uint256)</code></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-1"><a class="header" href="#applyfn-1">applyFn</a></h3>
+<p>Maps <code>function(uint256, uint256) internal view</code> to pops and pushes once.
+The function itself is irrelevant we only care about the signature to
+know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256, uint256) internal view
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256, uint256) internal view</code></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-2"><a class="header" href="#applyfn-2">applyFn</a></h3>
+<p>Maps <code>function(uint256, uint256) internal view returns (uint256)</code> to
+pops and pushes once. The function itself is irrelevant we only care
+about the signature to know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256, uint256) internal view returns (uint256)
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256, uint256) internal view returns (uint256)</code></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfnn"><a class="header" href="#applyfnn">applyFnN</a></h3>
+<p>Reduces <code>function(uint256, uint256) internal view returns (uint256)</code>over
+N stack items. The function itself is irrelevant we only care about the
+signature to know how many items are popped/pushed. This is the same as
+calling <code>applyFn</code> N - 1 times in a loop, because the first reduction
+takes two items off the stack to start the accumulator, then each
+subsequent reduction takes one item off the stack to incorporate into the
+accumulator.
+As per LibOp the behaviour below n = 2 is somewhat arbitrary but is
+defined as:</p>
+<ul>
+<li>n = 0: Value <code>0</code> is <em>pushed</em> to the stack.</li>
+<li>n = 1: Noop.
+Which is interpreted as:</li>
+<li>n = 0: Falsey outcome.</li>
+<li>n = 1: Accumulator without any further inputs = Identity.
+Which pragmatically looks something like:</li>
+<li>n = 0: <code>_: add();</code></li>
+<li>n = 1: <code>_: add(1);</code></li>
+</ul>
+<pre><code class="language-solidity">function applyFnN(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256, uint256) internal view returns (uint256),
+    uint256 n
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256, uint256) internal view returns (uint256)</code></td><td></td></tr>
+<tr><td><code>n</code></td><td><code>uint256</code></td><td>The number of times the function is applied to the stack.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied n times.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-3"><a class="header" href="#applyfn-3">applyFn</a></h3>
+<p>Maps
+<code>function(uint256, uint256, uint256) internal view returns (uint256)</code> to
+pops and pushes once. The function itself is irrelevant we only care
+about the signature to know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256, uint256, uint256) internal view returns (uint256)
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256, uint256, uint256) internal view returns (uint256)</code></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-4"><a class="header" href="#applyfn-4">applyFn</a></h3>
+<p>Maps</p>
+<pre><code>function(uint256, uint256, uint256, uint256)
+internal
+view
+returns (uint256)
+</code></pre>
+<p>to pops and pushes once. The function itself is irrelevant we only care
+about the signature to know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256, uint256, uint256, uint256)
+            internal
+            view
+            returns (uint256)
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256, uint256, uint256, uint256) internal view returns (uint256)</code></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-5"><a class="header" href="#applyfn-5">applyFn</a></h3>
+<p>Maps <code>function(Operand, uint256) internal view returns (uint256)</code> to
+pops and pushes once. The function itself is irrelevant we only care
+about the signature to know how many items are popped/pushed.
+The operand MUST NOT influence the stack movements if this application
+is to be valid.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(Operand, uint256) internal view returns (uint256)
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (Operand, uint256) internal view returns (uint256)</code></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-6"><a class="header" href="#applyfn-6">applyFn</a></h3>
+<p>Maps
+<code>function(Operand, uint256, uint256) internal view returns (uint256)</code> to
+pops and pushes once. The function itself is irrelevant we only care
+about the signature to know how many items are popped/pushed.
+The operand MUST NOT influence the stack movements if this application
+is to be valid.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(Operand, uint256, uint256) internal view returns (uint256)
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (Operand, uint256, uint256) internal view returns (uint256)</code></td><td></td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-7"><a class="header" href="#applyfn-7">applyFn</a></h3>
+<p>Maps <code>function(uint256[] memory) internal view returns (uint256)</code> to
+pops and pushes once given that we know the length of the dynamic array
+at deploy time. The function itself is irrelevant we only care about the
+signature to know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256[] memory) internal view returns (uint256),
+    uint256 length
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256[] memory) internal view returns (uint256)</code></td><td></td></tr>
+<tr><td><code>length</code></td><td><code>uint256</code></td><td>The length of the dynamic input array.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-8"><a class="header" href="#applyfn-8">applyFn</a></h3>
+<p>Maps</p>
+<pre><code>function(uint256, uint256, uint256[] memory)
+internal
+view
+returns (uint256)
+</code></pre>
+<p>to pops and pushes once given that we know the length of the dynamic
+array at deploy time. The function itself is irrelevant we only care
+about the signature to know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256, uint256, uint256[] memory)
+            internal
+            view
+            returns (uint256),
+    uint256 length
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256, uint256, uint256[] memory) internal view returns (uint256)</code></td><td></td></tr>
+<tr><td><code>length</code></td><td><code>uint256</code></td><td>The length of the dynamic input array.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-9"><a class="header" href="#applyfn-9">applyFn</a></h3>
+<p>Maps</p>
+<pre><code>function(uint256, uint256, uint256, uint256[] memory)
+internal
+view
+returns (uint256)
+</code></pre>
+<p>to pops and pushes once given that we know the length of the dynamic
+array at deploy time. The function itself is irrelevant we only care
+about the signature to know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256, uint256, uint256, uint256[] memory)
+            internal
+            view
+            returns (uint256),
+    uint256 length
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256, uint256, uint256, uint256[] memory) internal view returns (uint256)</code></td><td></td></tr>
+<tr><td><code>length</code></td><td><code>uint256</code></td><td>The length of the dynamic input array.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+<h3 id="applyfn-10"><a class="header" href="#applyfn-10">applyFn</a></h3>
+<p>Maps</p>
+<pre><code>function(uint256, uint256[] memory, uint256[] memory)
+internal
+view
+returns (uint256[] memory)
+</code></pre>
+<p>to pops and pushes once given that we know the length of the dynamic
+array at deploy time. The function itself is irrelevant we only care
+about the signature to know how many items are popped/pushed.</p>
+<pre><code class="language-solidity">function applyFn(
+    IntegrityCheckState memory integrityCheckState,
+    Pointer stackTop,
+    function(uint256, uint256[] memory, uint256[] memory)
+            internal
+            view
+            returns (uint256[] memory),
+    uint256 length
+) internal pure returns (Pointer);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>integrityCheckState</code></td><td><code>IntegrityCheckState</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>stackTop</code></td><td><code>Pointer</code></td><td>as per <code>pop</code> and <code>push</code>.</td></tr>
+<tr><td><code>&lt;none&gt;</code></td><td><code>function (uint256, uint256[] memory, uint256[] memory) internal view returns (uint256[] memory)</code></td><td></td></tr>
+<tr><td><code>length</code></td><td><code>uint256</code></td><td>The length of the dynamic input array.</td></tr>
+</tbody></table>
+</div>
+<p><strong>Returns</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>&lt;none&gt;</code></td><td><code>Pointer</code></td><td>The stack top after the function has been applied once.</td></tr>
+</tbody></table>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../src/lib/integrity/LibIntegrityCheck.sol/struct.IntegrityCheckState.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../../src/lib/integrity/LibIntegrityCheck.sol/constants.LibIntegrityCheck.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../src/lib/integrity/LibIntegrityCheck.sol/struct.IntegrityCheckState.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../../src/lib/integrity/LibIntegrityCheck.sol/constants.LibIntegrityCheck.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../../elasticlunr.min.js"></script>
+        <script src="../../../../mark.min.js"></script>
+        <script src="../../../../searcher.js"></script>
+
+        <script src="../../../../clipboard.min.js"></script>
+        <script src="../../../../highlight.js"></script>
+        <script src="../../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../solidity.min.js"></script>
+
+
+    </div>
+    </body>
+</html>
